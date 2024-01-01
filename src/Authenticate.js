@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import {useState, useEffect} from 'react'
 
 export default function Authenticate() {
   const CLIENT_ID = process.env.REACT_APP_CLIENT_ID
@@ -6,7 +6,7 @@ export default function Authenticate() {
   const [token, setToken] = useState('')
 
   useEffect(() => {
-    var authParams = {
+    const authParams = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -16,7 +16,7 @@ export default function Authenticate() {
         CLIENT_ID +
         '&client_secret=' +
         CLIENT_SECRET,
-    }
+    };
     fetch('https://accounts.spotify.com/api/token', authParams)
       .then((res) => res.json())
       .then((data) => setToken(data.access_token))

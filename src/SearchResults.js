@@ -10,8 +10,8 @@ export default function SearchResults({ searchResults, addToPlaylist }) {
 
     return (
       <div>
-        {searchResults.map((result) => (
-          <ListGroup.Item variant="dark" alignItem="left" key={result.id}>
+        {searchResults.map((result, index) => (
+          <ListGroup.Item variant="dark" key={index}>
               {result.name} by {result.artist}
               {<img src={result.image} alt={result.image} className='img-padding' />}
               <button

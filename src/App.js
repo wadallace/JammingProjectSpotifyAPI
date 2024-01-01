@@ -1,3 +1,5 @@
+// noinspection JSUnresolvedReference
+
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState } from 'react'
@@ -30,14 +32,14 @@ export default function App() {
   async function searchSpotify() {
     console.log(`Searching for ${searchInput}...`)
 
-    var searchParams = {
+    const searchParams = {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         Authorization: 'Bearer ' + token,
       },
-    }
-    var searchQuery = await fetch(
+    };
+    const searchQuery = await fetch(
       `https://api.spotify.com/v1/search?q=${searchInput}&type=track&limit=5`,
       searchParams
     )
@@ -56,16 +58,16 @@ export default function App() {
           uri: track.uri,
           image: track.album.images[2].url,
         }))
-      })
+      });
     setSearchResults(searchQuery)
   }
 
   const onSearchInputChange = (e) => {
     setSearchInput(e.target.value)
   }
-  const onSearchSubmit = (e) => {
+  const onSearchSubmit = async (e) => {
     e.preventDefault()
-    searchSpotify()
+    await (searchSpotify())
     //clear search field
     setSearchInput('')
   }
