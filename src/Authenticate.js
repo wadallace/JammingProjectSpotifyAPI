@@ -5,6 +5,8 @@ export default function Authenticate() {
   const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET
   const [token, setToken] = useState('')
 
+  
+
   useEffect(() => {
     const authParams = {
       method: 'POST',

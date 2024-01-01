@@ -76,7 +76,7 @@ export default function App() {
     <div className='App'>
       <header className='App-header'>
         <div>
-          <h1>Jammming</h1>
+          <h1 className='fw-bold' >Jammming</h1>
           <form onSubmit={onSearchSubmit}>
             <input
               className='SearchBar'
@@ -84,6 +84,7 @@ export default function App() {
               placeholder='Enter a Song, Artist, or Album'
               onChange={onSearchInputChange}
               value={searchInput}
+              id='searchbarinput'
             />
             <button className='SearchButton'>SEARCH</button>
           </form>
