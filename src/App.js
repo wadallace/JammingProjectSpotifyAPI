@@ -38,7 +38,7 @@ export default function App() {
         'Content-Type': 'application/json',
         Authorization: 'Bearer ' + token,
       },
-    };
+    }
     const searchQuery = await fetch(
       `https://api.spotify.com/v1/search?q=${searchInput}&type=track&limit=5`,
       searchParams
@@ -58,7 +58,7 @@ export default function App() {
           uri: track.uri,
           image: track.album.images[2].url,
         }))
-      });
+      })
     setSearchResults(searchQuery)
   }
 
@@ -67,7 +67,7 @@ export default function App() {
   }
   const onSearchSubmit = async (e) => {
     e.preventDefault()
-    await (searchSpotify())
+    await searchSpotify()
     //clear search field
     setSearchInput('')
   }
@@ -76,7 +76,7 @@ export default function App() {
     <div className='App'>
       <header className='App-header'>
         <div>
-          <h1 className='fw-bold' >Jammming</h1>
+          <h1 className='fw-bold'>Jammming</h1>
           <form onSubmit={onSearchSubmit}>
             <input
               className='SearchBar'
@@ -91,20 +91,20 @@ export default function App() {
         </div>
       </header>
       <div className='container'>
-          <div className='results'>
-            <SearchResults
-              searchResults={searchResults}
-              addToPlaylist={addToPlaylist}
-            />
-          </div>
-          <div className='playlist'>
-            <Playlist
-              playlist={playlist}
-              removeFromPlaylist={removeFromPlaylist}
-              clearPlaylist={clearPlaylist}
-            />
-          </div>
+        <div className='results'>
+          <SearchResults
+            searchResults={searchResults}
+            addToPlaylist={addToPlaylist}
+          />
         </div>
+        <div className='playlist'>
+          <Playlist
+            playlist={playlist}
+            removeFromPlaylist={removeFromPlaylist}
+            clearPlaylist={clearPlaylist}
+          />
+        </div>
+      </div>
     </div>
   )
 }

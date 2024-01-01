@@ -71,7 +71,8 @@ export default function Playlist({
             Save Playlist
           </button>
         )}
-      </div> <Toast
+      </div>{' '}
+      <Toast
         onClose={handleClose}
         show={showToast}
         delay={3000}
