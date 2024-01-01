@@ -1,16 +1,16 @@
 .App {
   text-align: center;
+  background-color: #282c34;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  min-height: 100vh;
+  padding-top: 2.5rem;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 
@@ -21,4 +21,92 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.SearchBar {
+  width: 80%;
+  height: 2.5rem;
+  padding-left: 1rem;
+  font-size: medium;
+  border: 30px;
+  outline: none;
+  border-radius: 100px;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+  margin-top: 1.3rem;
+}
+
+.SearchButton {
+  width: 28%;
+  height: 2.2rem;
+  background-color: #1db954;
+  border: 10px;
+  border-radius: 100px;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.02rem;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.5s ease;
+  margin: 1.5rem;
+}
+
+.SearchButton:hover {
+  background-color: #1ed760;
+}
+
+.SearchButton:active {
+  background-color: #1ed760;
+  transform: translateY(4px);
+}
+
+.Save {
+  background-color: #1db954;
+  border: none;
+  border-radius: 0.3rem;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  vertical-align: middle;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  margin-left: 0.7rem;
+}
+.Save:hover {
+  background-color: #1ed760;
+}
+.Save:active {
+  background-color: #1ed760;
+}
+.PlaylistBar {
+  height: 1.8rem;
+  padding-left: 1rem;
+  font-size: medium;
+  border: 10px;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  justify-content: space-between;
+}
+
+.results {
+  width: 50%; /* Adjust as needed */
+  padding-right: 1rem;
+}
+
+.playlist {
+  width: 50%; /* Adjust as needed */
+  margin-left: 1rem;
+}
+
+.img-padding {
+  padding: 0.5rem;
 }

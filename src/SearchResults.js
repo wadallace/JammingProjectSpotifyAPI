@@ -1,23 +1,37 @@
-export default function SearchResults({searchResults, addToPlaylist}) {
+import React from 'react'
+import ListGroup from 'react-bootstrap/ListGroup'
 
-  const handleClick = (song) => {
-    addToPlaylist(song)
+export default function SearchResults({ searchResults, addToPlaylist }) {
+  const original = () => {
+
+    const handleClick = (song) => {
+      addToPlaylist(song)
+    }
+
+    return (
+      <div>
+        {searchResults.map((result) => (
+          <ListGroup.Item variant="dark" alignItem="left" key={result.id}>
+              {result.name} by {result.artist}
+              {<img src={result.image} alt={result.image} className='img-padding' />}
+              <button
+                type='submit'
+                onClick={() => handleClick(result)}
+                className='Save'
+              >
+                +
+              </button>
+          </ListGroup.Item>
+        ))}
+      </div>
+    )
   }
 
   return (
     <div>
       <h3>Results</h3>
       <>
-        {searchResults.map((result) => (
-          <div key={result.id}>
-            <p>
-              {result.name} by {result.artist}
-              <button type='submit'
-              onClick={() => handleClick(result)}>➕</button>
-            </p>
-          </div>
-        ))}
-
+        <ListGroup style={{fontSize: '18px'}}>{original()}</ListGroup>
       </>
     </div>
   )
