@@ -50,11 +50,11 @@ export default function Playlist({
         >
           <ListGroup.Item variant='dark'>
             <p>
-              {song.name} by {song.artist}
+              {song?.name} by {song?.artist}
               {
                 <img
-                  src={song.image}
-                  alt={song.image}
+                  src={song?.image}
+                  alt='album cover'
                   className='img-padding'
                 />
               }
@@ -77,14 +77,14 @@ export default function Playlist({
         show={showToast}
         delay={3000}
         autohide
-        className='toast text-white bg-primary border-0 d-inlin-block m-1'
+        className='toast text-white bg-primary border-0 m-1' 
         role='alert'
       >
         <Toast.Header>
-          <strong className='me-auto'>Success!</strong>
+          <strong className='me-auto'>Playlist submitted!</strong>
           <small>Just now</small>
         </Toast.Header>
-        <Toast.Body>Playlist submitted!</Toast.Body>
+        <Toast.Body>Success</Toast.Body>
       </Toast>
     </div>
   )

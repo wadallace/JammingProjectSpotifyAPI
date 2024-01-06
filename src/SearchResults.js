@@ -11,11 +11,11 @@ export default function SearchResults({ searchResults, addToPlaylist }) {
       <div>
         {searchResults.map((result, index) => (
           <ListGroup.Item variant='dark' key={index}>
-            {result.name} by {result.artist}
+            {result?.name} by {result?.artist}
             {
               <img
-                src={result.image}
-                alt={result.image}
+                src={result?.image}
+                alt='album cover'
                 className='img-padding'
               />
             }
